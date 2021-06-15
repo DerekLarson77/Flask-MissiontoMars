@@ -1,5 +1,3 @@
-
-
 def scrape():
     from splinter import Browser
     from bs4 import BeautifulSoup
@@ -69,4 +67,4 @@ def scrape():
                  "Facts":  html,
                  "Hemispheres":  hemisphere_image_urls}
     
-    return full_dict   
+    return full_dict
