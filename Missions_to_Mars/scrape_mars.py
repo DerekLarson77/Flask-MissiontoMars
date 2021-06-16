@@ -41,7 +41,7 @@ def scrape():
     mars_facts = df[1]
     mars_facts.rename(columns={0: "Stats", 1:  "Mars"}, inplace=True)
     mars_facts.set_index("Stats", inplace=True)
-    html = mars_facts.to_html()
+    table_html = mars_facts.to_html()
 
     
     #Mars Hemispheres
@@ -64,7 +64,7 @@ def scrape():
 
     full_dict = {"NASA":  nasa_news,
                  "JPL":  featured_image_url,
-                 "Facts":  html,
+                 "Facts":  table_html,
                  "Hemispheres":  hemisphere_image_urls}
     
     return full_dict
