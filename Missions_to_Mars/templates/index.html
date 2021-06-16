@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <div class="jumbotron text-center">
+      <h1><strong>Mission to Mars</strong></h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <h2 style="text-align:left">Latest Mars News</h2>
+    <p style="text-align:left" style="font-size:12px">{{ mars_data[0]["NASA"]["title"] }}</p>
+    <p style="text-align:left" style="font-size:8px">{{ mars_data[0]["NASA"]["paragraph"] }}</p>
+
+    <div class="row">
+      <div class="column">
+        <h3>Featured Mars Image</h3>
+      </div>
+
+      <div class="column">
+        
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>Mars</th>
+            </tr>
+            <tr>
+              <th>Stats</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Equatorial Diameter:</th>
+              <td>6,792 km</td>
+            </tr>
+            <tr>
+              <th>Polar Diameter:</th>
+              <td>6,752 km</td>
+            </tr>
+            <tr>
+              <th>Mass:</th>
+              <td>6.39 × 10^23 kg (0.11 Earths)</td>
+            </tr>
+            <tr>
+              <th>Moons:</th>
+              <td>2 ( Phobos &amp; Deimos )</td>
+            </tr>
+            <tr>
+              <th>Orbit Distance:</th>
+              <td>227,943,824 km (1.38 AU)</td>
+            </tr>
+            <tr>
+              <th>Orbit Period:</th>
+              <td>687 days (1.9 years)</td>
+            </tr>
+            <tr>
+              <th>Surface Temperature:</th>
+              <td>-87 to -5 °C</td>
+            </tr>
+            <tr>
+              <th>First Record:</th>
+              <td>2nd millennium BC</td>
+            </tr>
+            <tr>
+              <th>Recorded By:</th>
+              <td>Egyptian astronomers</td>
+            </tr>
+          </tbody>
+        </table>
+        <!--{{ mars_data[0]["Facts"] }}-->
+      </div>
+    </div>
+    
+    <h4><br>Mars Hemispheres</h4><br>
+    <div class="row">
+      <div class="column">
+        <img src="{{ mars_data[0]['Hemispheres'][0]['img_url'] }}" alt="first">
+        <p>{{ mars_data[0]['Hemispheres'][0]['title'] }}</p>  
+      </div>
+
+      <div class="column">
+        <img src="{{ mars_data[0]['Hemispheres'][1]['img_url'] }}" alt="second">
+        <p>{{ mars_data[0]['Hemispheres'][1]['title'] }}</p> 
+      </div>
+
+      <div class="column">
+        <img src="{{ mars_data[0]['Hemispheres'][2]['img_url'] }}" alt="third">
+        <p>{{ mars_data[0]['Hemispheres'][2]['title'] }}</p> 
+      </div>
+
+      <div class="column">
+        <img src="{{ mars_data[0]['Hemispheres'][3]['img_url'] }}" alt="fourth">
+        <p>{{ mars_data[0]['Hemispheres'][3]['title'] }}</p> 
+      </div>  
+    </div>
+
+  </div>
+</body>
+
+</html>
